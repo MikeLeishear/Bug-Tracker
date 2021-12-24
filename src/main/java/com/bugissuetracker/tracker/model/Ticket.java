@@ -1,11 +1,20 @@
 package com.bugissuetracker.tracker.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Set;
 
+@Entity
 public class Ticket {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
     private String title;
     private String description;
-    private Integer id;
     //owner/filer is specified by a user ID number
     private Integer owner;
     private Integer filer;
